@@ -4,12 +4,8 @@
   "description": "Short snippets and quote worth remembering.",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --verbose",
-    "build-watch": "parcel watch ./client/index.html",
-    "start-watch": "nodemon server/server.js",
-    "dev": "concurrently --kill-others \"npm run start-watch\" \"npm run build-watch\"",
-    "build": "parcel build ./client/index.html",
-    "start": "npm run build && node server/server.js"
+    "dev": "parcel client/index.html",
+    "build": "parcel build client/index.html"
   },
   "repository": {
     "type": "git",
@@ -22,7 +18,14 @@
     "url": "https://github.com/nlemast/snippets/issues"
   },
   "homepage": "https://github.com/nlemast/snippets#readme",
-  "dependencies": {
+  "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest": "^24.8.0",
     "parcel-bundler": "^1.12.3"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
