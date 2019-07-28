@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Tile from './Tile';
+import TileContainer from './TileContainer';
 
 export class App extends Component {
   render() {
-    return <Tile />;
+    return <TileContainer className="tile" />;
   }
 }
 
