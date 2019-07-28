@@ -2,14 +2,19 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
-const { fetchQuote } = require('./controllers/quoteController');
+const { fetchQuotes } = require('./controllers/quoteController');
+const { fetchColors } = require('./controllers/colorController');
 
 app.use(express.static('dist'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/quote', fetchQuote, (req, res, next) => {
+app.get('/quotes', fetchQuotes, (req, res, next) => {
   return res.json(res.locals.quoteInfo);
+});
+
+app.get('/colors', fetchColors, (req, res) => {
+  return res.json(res.locals.colors);
 });
 
 app.get('*', (req, res) =>
